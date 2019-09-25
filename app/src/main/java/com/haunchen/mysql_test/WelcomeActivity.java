@@ -14,8 +14,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        TextView tv = findViewById(R.id.textView);
+        //TextView tv = findViewById(R.id.textView);
 
-        tv.setText("Welcome, " + bundle.getString("account"));
+        //tv.setText("Welcome, " + bundle.getString("account"));
     }
 }
