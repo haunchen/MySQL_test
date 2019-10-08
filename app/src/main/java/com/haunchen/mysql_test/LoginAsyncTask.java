@@ -26,7 +26,7 @@ public class LoginAsyncTask extends AsyncTask<String, Integer, String> {
         super.onPreExecute();
 
         progressBar = new ProgressDialog(MyContext.getContext());
-        progressBar.setMessage("登入中....");
+        progressBar.setMessage("登入中...");
         progressBar.setCancelable(false);
         progressBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressBar.show();
@@ -59,7 +59,7 @@ public class LoginAsyncTask extends AsyncTask<String, Integer, String> {
         progressBar.dismiss();
 
         if(login.equals("success")){
-            Log.e("test", "登入成功");
+            Log.e("Login State", "登入成功");
             Toast.makeText(MyContext.getContext(), "登入成功", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent();
@@ -67,6 +67,9 @@ public class LoginAsyncTask extends AsyncTask<String, Integer, String> {
 
             MyContext.getContext().startActivity(intent);
             LoginActivity.instance.finish();
+        }
+        else{
+            Log.e("Login State", "登入失敗");
         }
     }
 
@@ -95,7 +98,7 @@ public class LoginAsyncTask extends AsyncTask<String, Integer, String> {
             os.close();
 
             if(httpURLConnection.getResponseCode() == 200){
-                String temp = null;
+                String temp;
                 InputStream is = httpURLConnection.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 

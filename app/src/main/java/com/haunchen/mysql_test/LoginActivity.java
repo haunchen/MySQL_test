@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     static LoginActivity instance;
-    static LayoutInflater layoutInflater;
 
     Button send_bt;
     EditText acc_et, pass_et;
